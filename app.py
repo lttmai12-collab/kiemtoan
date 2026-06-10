@@ -44,13 +44,42 @@ st.markdown("""
     .metric-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        border-color: rgba(25, 103, 210, 0.3);
+    }
+    .card-blue {
+        background: linear-gradient(135deg, rgba(25, 103, 210, 0.12) 0%, rgba(25, 103, 210, 0.03) 100%) !important;
+        border: 1px solid rgba(25, 103, 210, 0.3) !important;
+    }
+    .card-blue:hover {
+        border-color: rgba(25, 103, 210, 0.6) !important;
+    }
+    .card-red {
+        background: linear-gradient(135deg, rgba(234, 67, 53, 0.12) 0%, rgba(234, 67, 53, 0.03) 100%) !important;
+        border: 1px solid rgba(234, 67, 53, 0.3) !important;
+    }
+    .card-red:hover {
+        border-color: rgba(234, 67, 53, 0.6) !important;
+    }
+    .card-orange {
+        background: linear-gradient(135deg, rgba(242, 114, 0, 0.12) 0%, rgba(242, 114, 0, 0.03) 100%) !important;
+        border: 1px solid rgba(242, 114, 0, 0.3) !important;
+    }
+    .card-orange:hover {
+        border-color: rgba(242, 114, 0, 0.6) !important;
+    }
+    .card-yellow {
+        background: linear-gradient(135deg, rgba(251, 188, 5, 0.12) 0%, rgba(251, 188, 5, 0.03) 100%) !important;
+        border: 1px solid rgba(251, 188, 5, 0.3) !important;
+    }
+    .card-yellow:hover {
+        border-color: rgba(251, 188, 5, 0.6) !important;
     }
     .metric-value {
-        font-size: 1.8rem;
+        font-size: 1.45rem;
         font-weight: 700;
-        color: #1967d2;
         margin-bottom: 0.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .metric-label {
         font-size: 0.9rem;
@@ -340,30 +369,30 @@ with tab_raw:
         col_kpi1, col_kpi2, col_kpi3, col_kpi4 = st.columns(4)
         with col_kpi1:
             st.markdown(f"""
-            <div class="metric-card">
-                <div class="metric-value">{total_txns:,}</div>
-                <div class="metric-label">Tổng Giao Dịch</div>
+            <div class="metric-card card-blue">
+                <div class="metric-value" style="color: #1557b0;" title="{total_txns:,}">{total_txns:,}</div>
+                <div class="metric-label" style="color: #1557b0; opacity: 0.85;">Tổng Giao Dịch</div>
             </div>
             """, unsafe_allow_html=True)
         with col_kpi2:
             st.markdown(f"""
-            <div class="metric-card">
-                <div class="metric-value" style="color: #ea4335;">{anom_txns:,}</div>
-                <div class="metric-label">Số Giao Dịch Bất Thường</div>
+            <div class="metric-card card-red">
+                <div class="metric-value" style="color: #b31412;" title="{anom_txns:,}">{anom_txns:,}</div>
+                <div class="metric-label" style="color: #b31412; opacity: 0.85;">Số Giao Dịch Bất Thường</div>
             </div>
             """, unsafe_allow_html=True)
         with col_kpi3:
             st.markdown(f"""
-            <div class="metric-card">
-                <div class="metric-value" style="color: #ea4335;">{anom_rate:.2f}%</div>
-                <div class="metric-label">Tỷ Lệ Bất Thường</div>
+            <div class="metric-card card-orange">
+                <div class="metric-value" style="color: #b06000;" title="{anom_rate:.2f}%">{anom_rate:.2f}%</div>
+                <div class="metric-label" style="color: #b06000; opacity: 0.85;">Tỷ Lệ Bất Thường</div>
             </div>
             """, unsafe_allow_html=True)
         with col_kpi4:
             st.markdown(f"""
-            <div class="metric-card">
-                <div class="metric-value" style="color: #fbbc05;">{anom_amount:,.0f} đ</div>
-                <div class="metric-label">Tổng Giá Trị Nghi Vấn</div>
+            <div class="metric-card card-yellow">
+                <div class="metric-value" style="color: #b06000;" title="{anom_amount:,.0f} đ">{anom_amount:,.0f} đ</div>
+                <div class="metric-label" style="color: #b06000; opacity: 0.85;">Tổng Giá Trị Nghi Vấn</div>
             </div>
             """, unsafe_allow_html=True)
         
