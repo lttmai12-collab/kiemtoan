@@ -1,4 +1,4 @@
-# 🏦 Web App Phát hiện Giao dịch Bất thường (Fraud Detection Dashboard)
+# 🏦 Web App Phát hiện Giao dịch Bất thường 1 (Fraud Detection Dashboard)
 
 Ứng dụng web trực quan và tương tác được xây dựng trên nền tảng **Streamlit** giúp phát hiện các giao dịch gian lận hoặc tài khoản có hành vi bất thường. Ứng dụng kết hợp giữa phân tích bộ quy tắc nghiệp vụ (Rule-based) và Mô hình Học máy (Machine Learning) được huấn luyện trực tiếp trên dữ liệu.
 
